@@ -1,0 +1,103 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  html, body, #root {
+    height: 100%;
+  }
+  body {
+    @apply font-body bg-cream text-ink;
+    -webkit-tap-highlight-color: transparent;
+  }
+  h1, h2, h3, h4 {
+    @apply font-display font-extrabold tracking-tight;
+  }
+}
+
+@layer components {
+  .btn {
+    @apply inline-flex items-center justify-center gap-2 rounded-full px-4 py-2.5 text-base font-extrabold shadow-soft
+           transition-all duration-150 ease-out hover:scale-[1.03] active:scale-95 select-none disabled:opacity-50 disabled:pointer-events-none
+           sm:px-6 sm:py-3 sm:text-lg;
+  }
+  .btn-primary {
+    @apply btn bg-sky-400 text-white hover:bg-sky-500;
+  }
+  .btn-secondary {
+    @apply btn bg-white text-ink border-2 border-ink/10 hover:bg-ink/5;
+  }
+  .btn-success {
+    @apply btn bg-grass-400 text-white hover:bg-grass-500;
+  }
+  .btn-danger {
+    @apply btn bg-coral-400 text-white hover:bg-coral-500;
+  }
+  .card {
+    @apply bg-white rounded-blob shadow-card border-2 border-sky-50 p-4 sm:p-6;
+  }
+  .card-link {
+    @apply card transition-transform duration-150 ease-out hover:scale-[1.02] cursor-pointer;
+  }
+  .input {
+    @apply w-full rounded-chunky border-2 border-ink/10 bg-white px-3 py-2.5 text-base text-ink
+           transition-colors duration-150 focus:border-sky-400 focus:outline-none focus:ring-4 focus:ring-sky-100
+           sm:px-4 sm:py-3 sm:text-lg;
+  }
+  .label {
+    @apply block text-xs font-extrabold text-ink/50 mb-1.5 uppercase tracking-wider;
+  }
+  .badge {
+    @apply inline-flex items-center px-2.5 py-1 rounded-full text-xs font-bold sm:px-3 sm:text-sm;
+  }
+
+  .rich-content {
+    @apply text-ink/80;
+  }
+  .rich-content p {
+    @apply my-1 first:mt-0 last:mb-0;
+  }
+  .rich-content ul {
+    @apply my-1 list-disc pl-5;
+  }
+  .rich-content ol {
+    @apply my-1 list-decimal pl-5;
+  }
+  .rich-content a {
+    @apply text-sky-500 underline decoration-2 underline-offset-2 hover:text-sky-600;
+  }
+  .rich-content strong {
+    @apply font-extrabold text-ink;
+  }
+  .rich-content p.is-editor-empty:first-child::before {
+    content: attr(data-placeholder);
+    float: left;
+    height: 0;
+    pointer-events: none;
+    @apply text-ink/30;
+  }
+}
+
+@layer utilities {
+  @keyframes float-soft {
+    0%, 100% { transform: translateY(0) rotate(0deg); }
+    50% { transform: translateY(-10px) rotate(3deg); }
+  }
+  @keyframes pop-in {
+    from { opacity: 0; transform: scale(0.9) translateY(6px); }
+    to { opacity: 1; transform: scale(1) translateY(0); }
+  }
+  .animate-float-soft {
+    animation: float-soft 5s ease-in-out infinite;
+  }
+  .animate-pop-in {
+    animation: pop-in 0.5s cubic-bezier(0.22, 1, 0.36, 1) both;
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .animate-float-soft,
+  .animate-pop-in {
+    animation: none !important;
+  }
+}
