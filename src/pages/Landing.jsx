@@ -182,8 +182,8 @@ export default function Landing() {
             escuelitas, hazlo con la libertad que Dios ponga en tu corazón.
           </p>
           <div className="mx-auto mt-5 inline-flex flex-col items-center gap-1 rounded-chunky bg-white px-6 py-4 shadow-card">
-            <span className="text-xs font-extrabold uppercase tracking-wide text-ink/40">Llave / Cuenta</span>
-            <span className="text-2xl font-extrabold tracking-wide text-sunshine-700">1140869398</span>
+            <span className="text-xs font-extrabold uppercase tracking-wide text-ink/40"> Nequi </span>
+            <span className="text-2xl font-extrabold tracking-wide text-sunshine-700">3246102594</span>
             <span className="text-sm font-bold text-ink/60">Gisella Bustamante</span>
           </div>
         </div>
